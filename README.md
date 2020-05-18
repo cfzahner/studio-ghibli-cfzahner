@@ -1,52 +1,21 @@
-# Spa Starter
+# Studio Ghibli API Practice
 
-If you are only interested in the `parcel-spa` `branch`, when trying to `merge` this into `master`, you will most likely not be able to do so because of 'unrelated histories.'
+Create a row of [`input type="radio"`es](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio). These will correspond with these [_endpoints_](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e74abaaf-69be-4bbc-b27f-df44217358ea/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200518%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200518T194249Z&X-Amz-Expires=86400&X-Amz-Signature=9f603084cea3a33091df0f5a3ee14d1b30707bcd3e8bef40d515672ae14f90f0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22) from the [Studio Ghibli API.](https://ghibliapi.herokuapp.com/)
 
-You will have to get 'hardcore' with things. From `master`: `git reset --hard parcel-spa`.
+As a user selects a 🔘, `fetch` the appropriate data and display in a `<table>`. _All `fetch`ing should be done from inside the 'api' 📁._ You will only need `GET` _requests_ for this assignment, but there are multiple _endpoints,_ of course.
 
-Then: `git push origin master --force`
+**Notice that the _endpoints_ do follow a simple pattern...you may be able to avoid some repetitive code! 🤔**
 
-You can then do: `git branch -D parcel-spa` to remove that other `branch` IYW.
+Use `documentQuerySelectorAll` and `addEventListener("change")`. Set up your 'api' 📁 such that the actual _endpoint_ is derived from the selected 🔘.
 
-**Do not make a habit of destroying and `forc`ing `git` `histor`ies.**
+To get started, you will probably just want to get 1 single 🔘 working by itself with a `querySelector` on that one first.
 
-## Overview
+You can browse through the [Studio Ghibli API.](https://ghibliapi.herokuapp.com/) documentation and just pick 3-4 fields from each of the _endpoints_ 👆🏽.
 
-This template repository contains several opinionated, 'starter' files and settings to help students focus more time and energy on learning how to code and/or craft 'business logic' for projects and less time on configurations.
+Use `state`, and `render` along with _stateless, functional components_ as we lurned about in class.
 
-In addition to a '.gitignore' and some VS Code specific extensions and settings, it includes the 'recommended' settings for:
+**Bonus 1:** Include a ['spinner'](https://projects.lukehaas.me/css-loaders/) for 'loading.' `git checkout -b spinner`
 
-1. [ESLint](eslint.org)
-2. [Stylelint](stylelint.io)
-3. [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+**Bonus 2:** Add a `input type="checkbox` after each entry in any of the `<tables>`. If a user checks this, 'highlight' the row. You'll probably just want to add a `.is-highlighted` _class_ to your CSS and [`toggle`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) that one. You'll need [`closest()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/closest) to get to the _parent_ `tr`.
 
-It uses [Parcel](https://parceljs.org/) for a simple build process and a `"serve"` script is included.
-
-## Directory Structure and TODOs
-
-### 'components' 📁
-
-'components' will hold...your _functional components_ in individual JS files that have capitalized filenames (e.g. 'Table.js'). The code inside would start like this:
-
-```js
-// Use 'props' to create and 'return' markup that will be conveniently wrapped in TEMPLATE LITERALS.
-export default (props) => ``
-```
-
-'./components/index.js' will manage `export`ing out the _components_ with `export { default as`
-
----
-
-Other `TODO`s and 🎶 are sprinkled around in miscellaneous files to guide the overall process.
-
-## Get Started
-
-**First and foremost,** make sure that your local machine is set up with all of the 'dev environment tooling' as per [this guide...](https://www.notion.so/codefinity/Setting-up-a-Local-Dev-Environment-for-JS-02a4e9f4a30043d3a8e7d109be3448f4)
-
-After establishing your directory structure on your local machine, (e.g. '~/Code'), kindly [follow these girections](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) - essentially, there should be a button 👆🏾that says **Use this template.**
-
-Once this repo has been created on your GitHub, you can click on the button to `clone` it as usual. Once it's `clone`d to your local machine, kindly `cd` into the directory and **be sure to do:** `npm i` to build out 'node_modules'. This will provide you with some helpful tooling and linting.
-
-Now, enter `code .` to open this project in VS Code, and look for a prompt to 'install some extensions' once inside VS Code (in the bottom right of your screen). You should install these. 👍🏾
-
-Update this README and make any other initial changes or 🌱 files, etc. To help you do that, here's a [Markdown Guide](https://www.notion.so/codefinity/MarkDown-Guide-3c7aecdc1327437e9785cb9c1d277f42)
+**Bonus 3:** Try removing all of your styles and using [Bulma](https://bulma.io/) to improve the `<table>` `git checkout -b bulma`
