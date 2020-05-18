@@ -1,13 +1,14 @@
 {
-  "name": "spa-starter",
+  "name": "studio-ghibli-api-practice",
   "version": "1.0.0",
-  "description": "A starter repo for starting with Parcel and SPAs",
-  "main": "index.js",
+  "description": "Practice with parcel and SPAs using Studio Ghibli API",
+  "main": "index.html",
   "scripts": {
     "serve": "parcel src/index.html"
   },
   "keywords": [
-    "parcel"
+    "parcel",
+    "api"
   ],
   "author": "Manav Misra",
   "license": "ISC",
