@@ -1,7 +1,7 @@
 function createTableHeaders (headings) {
   return headings.map(heading => `
   <th>${heading}</th>
-  `).join('')
+  `).join(' ')
 }
 
 export default (headers) => `
