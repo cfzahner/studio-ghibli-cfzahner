@@ -19,3 +19,4 @@ export default () => `
     ${TBody()}
   </table
 `
+// what do you want to receive in export default () and what will be sent out in Thead and Tbody ()

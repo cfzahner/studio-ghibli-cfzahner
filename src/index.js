@@ -12,11 +12,11 @@ const state = {
     headers: {
       // TODO: Check out the data at: https://ghibliapi.herokuapp.com/
       // Pick 3 properties from each set and make those the 'headers'
-      films: [],
-      people: [],
-      locations: [],
-      species: [],
-      vehicles: []
+      films: ['title', 'director', 'release date'],
+      people: ['name', 'gender', 'age'],
+      locations: ['name', 'climate', 'terrain'],
+      species: ['name', 'eye_colors', 'hair_colors'],
+      vehicles: ['name', 'vehicle_class', 'length']
     },
     stuff: []
   }
@@ -32,12 +32,15 @@ const render = (st = state) => {
   `
 
   document.querySelectorAll('input').forEach(input => {
-    input.addEventListener('change', function () {
+    input.addEventListener('change', async function () {
       console.log(this.value)
+
+      // update Table.activeStuff with 'this value'
+      // make the correct api call
     })
   })
 }
-
+// i want to get studio gbili stuff and get the activestuff
 (async () => {
   state.Table.stuff = await getStudioGhibliStuff(state.Table.activeStuff)
   render()
