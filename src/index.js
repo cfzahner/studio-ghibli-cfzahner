@@ -39,12 +39,8 @@ const render = (st = state) => {
 
   document.querySelectorAll('input').forEach(input => {
     input.addEventListener('click', function () {
-      this.value = state.Table.activeStuff
-      const grabURL = async () => {
-        return response.json()
-      }
-      grabURL()
-        .then(data => console.log(data))
+      state.Table.activeStuff = this.value
+      render()
     })
   })
 }
