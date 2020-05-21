@@ -1,6 +1,9 @@
 import { getStudioGhibliStuff } from './api'
 
 import * as components from './components'
+import 'bulma/css/bulma.min.css'
+// import './style.css'
+
 import fetch from 'fetch'
 
 // '#root' is the 'mounting point' for our app inside of './index.html'
@@ -42,6 +45,7 @@ const render = (st = state) => {
       state.Table.activeStuff = this.value
       renderDataFromAPI()
       render()
+
       document.querySelector(`#${state.Table.activeStuff}`).checked = true
     })
   })
