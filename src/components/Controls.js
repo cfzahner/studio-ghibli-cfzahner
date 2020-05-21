@@ -1,5 +1,5 @@
 export default () => `<div>
-  <input type="radio" name="endpoint" id="films" value="films" checked /><label for="films"
+  <input type="radio" name="endpoint" id="films" value="films" /><label for="films"
     >Films
   </label>
 </div>
