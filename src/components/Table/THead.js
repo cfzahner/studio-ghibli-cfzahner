@@ -1,13 +1,13 @@
-function createTableHeaders () {
-  return `
-    <th>No headers sent yet!</th>
-  `
+function createTableHeaders (headings) {
+  return headings.map(heading => `
+  <th>${heading}</th>
+  `).join('')
 }
 
-export default () => `
+export default (headers) => `
   <thead>
     <tr>
-      ${createTableHeaders()}
+      ${createTableHeaders(headers)}
     </tr>
   </thead>
 `
