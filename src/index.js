@@ -41,6 +41,7 @@ const render = (st = state) => {
     input.addEventListener('click', function () {
       state.Table.activeStuff = this.value
       render()
+      document.querySelector(`#${state.Table.activeStuff}`).checked = true
     })
   })
 }
