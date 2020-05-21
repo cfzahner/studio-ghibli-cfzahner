@@ -30,6 +30,8 @@ const state = {
 // 'state' is DEFAULT VALUE for NAMED PARAMETER 'st'
 const render = (st = state) => {
   // 'innerHTML' will be updated with the HTML 'return'ed from the FUNCTIONAL COMPONENTS.
+
+  // accessing the root element and updating whats in it (html), refer to empty>< in html.index.
   root.innerHTML = `
       ${components.Radio()}
       ${components.Table(st.Table)}
@@ -39,7 +41,6 @@ const render = (st = state) => {
     input.addEventListener('click', function () {
       this.value = state.Table.activeStuff
       const grabURL = async () => {
-        const response = await window.fetch('https://ghibliapi.herokuapp.com/films/')
         return response.json()
       }
       grabURL()
@@ -49,6 +50,10 @@ const render = (st = state) => {
 }
 // i want to get studio gbili stuff and get the activestuff
 (async () => {
-  state.Table.stuff = await getStudioGhibliStuff(state.Table.activeStuff)
-  render()
+  try {
+    state.Table.stuff = await getStudioGhibliStuff(state.Table.activeStuff)
+    render()
+  } catch (error) {
+    console.error(error)
+  }
 })()
