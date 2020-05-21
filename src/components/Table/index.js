@@ -3,7 +3,6 @@
  * These are just FUNCTIONS,
  * not OBJECTS - no DESTRUCTURING
  */
-
 import THead from './THead'
 import TBody from './TBody'
 
@@ -13,6 +12,7 @@ import TBody from './TBody'
  *
  * All of that HTML will be RETURNed and will end up inside '#root'
  */
+// TODO: Receive stat and use appropriate 'props'
 export default () => `
   <table>
     ${THead()}
