@@ -5,6 +5,7 @@
  */
 import THead from './THead'
 import TBody from './TBody'
+// import { Table } from '..'
 
 /**
  * Whenever this FUNCTIONAL COMPONENT is INVOKED,
@@ -13,10 +14,11 @@ import TBody from './TBody'
  * All of that HTML will be RETURNed and will end up inside '#root'
  */
 // TODO: Receive stat and use appropriate 'props'
-export default (props) => `
-  <table>
+export default (props) =>
+ `
+  <table><class="table"/>
     ${THead(props.headers[props.activeStuff])}
-    ${TBody()}
+    ${TBody(props.stuff, props.dataKeys[props.activeStuff])}
   </table
 `
 // what do you want to receive in export default () and what will be sent out in Thead and Tbody ()
