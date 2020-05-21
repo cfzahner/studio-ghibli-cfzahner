@@ -10,7 +10,7 @@ const state = {
     // This will update based on 'components.Radio' - defaults to 'films
     activeStuff: 'films',
     dataKeys: {
-      films: ['title', 'director', 'release date'],
+      films: ['title', 'director', 'release_date'],
       people: ['name', 'gender', 'age'],
       locations: ['name', 'climate', 'terrain'],
       species: ['name', 'eye_colors', 'hair_colors'],
@@ -40,13 +40,13 @@ const render = (st = state) => {
   document.querySelectorAll('input').forEach(input => {
     input.addEventListener('click', function () {
       state.Table.activeStuff = this.value
-      loadData()
+      renderDataFromAPI()
       render()
       document.querySelector(`#${state.Table.activeStuff}`).checked = true
     })
   })
 }
-async function loadData () {
+async function renderDataFromAPI () {
   try {
     state.Table.stuff = await getStudioGhibliStuff(state.Table.activeStuff)
     render()
@@ -54,4 +54,4 @@ async function loadData () {
     console.error(error)
   }
 }
-loadData()
+renderDataFromAPI()
