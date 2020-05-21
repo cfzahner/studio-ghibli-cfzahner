@@ -15,7 +15,7 @@ import TBody from './TBody'
 // TODO: Receive stat and use appropriate 'props'
 export default (props) => `
   <table>
-    ${THead(props.headers.films)}
+    ${THead(props.headers[props.activeStuff])}
     ${TBody()}
   </table
 `
