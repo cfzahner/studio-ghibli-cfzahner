@@ -1,24 +1,44 @@
-// TODO: 'import' functional components from "./components"
+import { getStudioGhibliStuff } from './api'
+
+import * as components from './components'
 
 // '#root' is the 'mounting point' for our app inside of './index.html'
 const root = document.querySelector('#root')
 
-/**
- * 'state' keeps track of...the 'state' of our application.
- * It contains any/all information that
- * FUNCTIONAL COMPONENTS would need to do their job;
- * These are divvied up per FUNCTIONAL COMPONENT.
- *
- * ⚠️ 'state' SHOULD NOT have any METHODS - only PROPERTIES❗
- */
 const state = {
-  // TODO: Add PROPERTIES to correspond with what each FUNCTIONAL COMPONENT will need.
+  Table: {
+    // This will update based on 'components.Radio' - defaults to 'films
+    activeStuff: 'films',
+    headers: {
+      // TODO: Check out the data at: https://ghibliapi.herokuapp.com/
+      // Pick 3 properties from each set and make those the 'headers'
+      films: [],
+      people: [],
+      locations: [],
+      species: [],
+      vehicles: []
+    },
+    stuff: []
+  }
 }
 
-const render = (state) => {
+// 'state' is DEFAULT VALUE for NAMED PARAMETER 'st'
+const render = (st = state) => {
+  console.info(st)
   // 'innerHTML' will be updated with the HTML 'return'ed from the FUNCTIONAL COMPONENTS.
-  root.innerHTML = ''
+  root.innerHTML = `
+    ${components.Radio()}
+    ${components.Table(st.Table)}
+  `
+
+  document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('change', function () {
+      console.log(this.value)
+    })
+  })
 }
 
-// TODO: Remove this 👇🏽
-console.log(state, render)
+(async () => {
+  state.Table.stuff = await getStudioGhibliStuff(state.Table.activeStuff)
+  render()
+})()
