@@ -14,8 +14,8 @@ You can browse through the [Studio Ghibli API.](https://ghibliapi.herokuapp.com/
 
 Use `state`, and `render` along with _stateless, functional components_ as we lurned about in class.
 
-**Bonus 1:** Include a ['spinner'](https://projects.lukehaas.me/css-loaders/) for 'loading.' `git checkout -b spinner`
+---
 
-**Bonus 2:** Add a `input type="checkbox` after each entry in any of the `<tables>`. If a user checks this, 'highlight' the row. You'll probably just want to add a `.is-highlighted` _class_ to your CSS and [`toggle`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) that one. You'll need [`closest()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/closest) to get to the _parent_ `tr`.
+_If you do bonus, create a separate `branch`._
 
-**Bonus 3:** Try removing all of your styles and using [Bulma](https://bulma.io/) to improve the `<table>` `git checkout -b bulma`
+**Bonus:** Add a `input type="checkbox` after each entry in any of the `<tables>`. If a user checks this, 'highlight' the row. You'll probably just want to add a `.is-highlighted` _class_ to your CSS and [`toggle`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) that one. You'll need [`closest()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/closest) to get to the _parent_ `tr`.
