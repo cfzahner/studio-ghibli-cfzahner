@@ -9,19 +9,19 @@ const state = {
   Table: {
     // This will update based on 'components.Radio' - defaults to 'films
     activeStuff: 'films',
-    data_keys: {
+    dataKeys: {
       films: ['title', 'director', 'release date'],
       people: ['name', 'gender', 'age'],
       locations: ['name', 'climate', 'terrain'],
       species: ['name', 'eye_colors', 'hair_colors'],
-      vehicles: ['name', 'vehicle_class', 'length']
+      vehicles: ['name', 'class', 'length']
     },
     headers: {
       films: ['Title', 'Director', 'Release Date'],
       people: ['Name', 'Gender', 'Age'],
       locations: ['Name', 'Climate', 'Terrain'],
       species: ['Name', 'Eye Colors', 'Hair Colors'],
-      vehicles: ['Name', 'Vehicle Class', 'Length']
+      vehicles: ['Name', 'Class', 'Length']
     },
     stuff: []
   }
@@ -40,17 +40,18 @@ const render = (st = state) => {
   document.querySelectorAll('input').forEach(input => {
     input.addEventListener('click', function () {
       state.Table.activeStuff = this.value
+      loadData()
       render()
       document.querySelector(`#${state.Table.activeStuff}`).checked = true
     })
   })
 }
-// i want to get studio gbili stuff and get the activestuff
-(async () => {
+async function loadData () {
   try {
     state.Table.stuff = await getStudioGhibliStuff(state.Table.activeStuff)
     render()
   } catch (error) {
     console.error(error)
   }
-})()
+}
+loadData()

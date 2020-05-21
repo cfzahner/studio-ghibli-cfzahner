@@ -1,14 +1,22 @@
 // TODO: Get 'stuff' from STATE and get this table built
-function createTableBody () {
+function createTableBody (dataSet, keys) {
+  dataSet.map(data => {
+    keys.map((key) => {
+      console.log(data[key])
+    })
+  })
+
   return `
     <tr>
-      <td>No data or stuff yet!
+      <td></td>
+      <td></td>
+
     </tr>
   `
 }
 
-export default () => `
+export default (stuff, propKeys) => `
   <tbody>
-    ${createTableBody()}
+    ${createTableBody(stuff, propKeys)}
   </tbody>
 `
