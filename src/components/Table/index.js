@@ -13,9 +13,9 @@ import TBody from './TBody'
  * All of that HTML will be RETURNed and will end up inside '#root'
  */
 // TODO: Receive stat and use appropriate 'props'
-export default () => `
+export default (props) => `
   <table>
-    ${THead()}
+    ${THead(props.headers.films)}
     ${TBody()}
   </table
 `
