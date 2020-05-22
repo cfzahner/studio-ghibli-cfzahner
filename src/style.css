@@ -1,15 +1,17 @@
-/* TODO: Add some CSS Variables for colors.
-  (https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
-*/
+@import "bulma/sass/utilities/_all.sass";
 
 body {
   /* TODO: Update font. */
   font-family: 'DM Mono', monospace;
-    font-size: 20px;
-
-
+  font-size: 20px;
+}
+tr.data {
+  background-color: black;
+  color: white;
+}
+.header {
+  background-color: aqua;
+  margin-bottom: 5em;
 }
 
-/* TODO: Set up type-scaling.
-  (https://type-scale.com/)
-*/
+
