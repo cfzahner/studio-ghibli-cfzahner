@@ -1,7 +1,7 @@
 // TODO: Get 'stuff' from STATE and get this table built
 function createTableBody (dataSet, keys) {
   return dataSet.map(data => `
-  <tr>
+  <tr class="data">
   ${createTableData(data, keys)}
   </tr>
   `
