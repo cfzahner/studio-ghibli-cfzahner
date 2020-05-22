@@ -5,7 +5,7 @@ function createTableHeaders (headings) {
 }
 
 export default (headers) => `
-  <thead>
+  <thead class="header">
     <tr>
       ${createTableHeaders(headers)}
     </tr>
