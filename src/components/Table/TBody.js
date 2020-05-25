@@ -16,3 +16,9 @@ function createTableData () {
   <td>${data[key]}</td>
   `).join('')
 }
+
+// export stuff and propKeys within the createTableBody to be used when imported.
+export default (stuff, propKeys) => `
+<tbody>
+${createTableBody(stuff, propKeys)}
+<tbody>`
