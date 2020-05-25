@@ -22,3 +22,10 @@ const state = {
     stuff: []
   }
 }
+// whats in the render car?...find root and access innerHtml to grab radios and table data from st.Table
+
+const render = (st = state) => {
+  root.innerHTML = `
+  ${components.Radio}
+  ${components.Table(st.Table)}`
+}
