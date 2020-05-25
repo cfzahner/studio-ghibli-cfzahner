@@ -42,3 +42,14 @@ const render = (st = state) => {
     })
   })
 }
+
+// create a function for renderDataFromAPI that says hey wait for active stuff in state to render, if not catch and log an error
+async function renderDataFromAPI () {
+  try {
+    state.Table.stuff = await getStudioGhibli(state.Table.activeStuff)
+    render()
+  } catch (error) {
+    console.log(error)
+  }
+}
+renderDataFromAPI()
