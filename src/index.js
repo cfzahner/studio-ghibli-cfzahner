@@ -29,3 +29,12 @@ const render = (st = state) => {
   ${components.Radio}
   ${components.Table(st.Table)}`
 }
+// go grab all the inputs and for each input add an event listener for a click, if there is a click heard start the function. With the function, go into state. and active stuff within table. Find the value of active stuff and render the data from the Api.
+
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('click', function () {
+    state.Table.activeStuff = this.value
+    renderDataFromAPI()
+    render()
+  })
+})
